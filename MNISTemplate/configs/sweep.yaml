@@ -1,0 +1,24 @@
+program: run.py
+args_no_hyphens: True
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+parameters:
+  model.lr:
+    min: 0.0001
+    max: 0.1
+  model.lin1_size:
+    values: [32, 64, 128, 256, 512]
+  model.lin2_size:
+    values: [32, 64, 128, 256, 512]
+  model.lin3_size:
+    values: [32, 64, 128, 256, 512]
+  datamodule.batch_size:
+    values: [32, 64, 128]
+
+early_terminate:
+  type: hyperband
+  s: 2
+  eta: 3
+  max_iter: 5

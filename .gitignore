@@ -1,6 +1,21 @@
-MNISTemplate/data/MNIST
-MNISTemplate/logs
-*.pyc
-*.pt
-*.png
-*.ckpt
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data & Models
+*.h5
+*.tar
+*.tar.gz
+
+# Lightning-Hydra-Template
+configs/local/default.yaml
+data/
+logs/
+.env
+.autoenv
+wandb/
+logs/
+
+*.DS_Store
+lightning_logs/*
