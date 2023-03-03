@@ -1,0 +1,8 @@
+class
+instance
+attributes class/instance
+self/cls
+static method
+class method
+hierarchy
+dunder method

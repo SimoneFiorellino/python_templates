@@ -1,0 +1,6 @@
+MNISTemplate/data/MNIST
+MNISTemplate/logs
+*.pyc
+*.pt
+*.png
+*.ckpt
