@@ -1,0 +1,21 @@
+program: train.py
+args_no_hyphens: True
+method: grid
+metric:
+  name: val_loss
+  goal: minimize
+parameters:
+  seed:
+    values: [42, 45, 50]
+
+early_terminate:
+  type: hyperband
+  s: 2
+  eta: 3
+  max_iter: 3
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}

@@ -1,4 +1,4 @@
-program: run.py
+program: train.py
 args_no_hyphens: True
 method: bayes
 metric:
@@ -21,4 +21,10 @@ early_terminate:
   type: hyperband
   s: 2
   eta: 3
-  max_iter: 5
+  max_iter: 3
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}

@@ -1,5 +1,6 @@
 import logging
 import warnings
+from pytorch_lightning import seed_everything
 
 import hydra
 
@@ -10,8 +11,10 @@ log = logging.getLogger(__name__)
 def main(cfg):
     warnings.filterwarnings("ignore", ".*does not have many workers.*")
 
+    seed_everything(cfg.seed, workers=True)
+
     logger = hydra.utils.instantiate(cfg.logger)
-    datamodule = hydra.utils.instantiate(cfg.data)
+    datamodule = hydra.utils.instantiate(cfg.datamodule)
     model = hydra.utils.instantiate(cfg.model)
     trainer = hydra.utils.instantiate(cfg.trainer, logger=logger)
 
